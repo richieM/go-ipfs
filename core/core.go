@@ -43,6 +43,7 @@ import (
 	"github.com/ipfs/go-ipfs/core/bootstrap"
 	"github.com/ipfs/go-ipfs/core/node"
 	"github.com/ipfs/go-ipfs/core/node/libp2p"
+	"github.com/ipfs/go-ipfs/doctor"
 	"github.com/ipfs/go-ipfs/fuse/mount"
 	"github.com/ipfs/go-ipfs/namesys"
 	ipnsrp "github.com/ipfs/go-ipfs/namesys/republisher"
@@ -94,6 +95,8 @@ type IpfsNode struct {
 	PSRouter *psrouter.PubsubValueStore `optional:"true"`
 	DHT      *dht.IpfsDHT               `optional:"true"`
 	P2P      *p2p.P2P                   `optional:"true"`
+
+	Doctor *doctor.Doctor `optional:"true"`
 
 	Process goprocess.Process
 	ctx     context.Context
